@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Playing</string>
+    <string name="name">Name</string>
+    <string name="textview">TextView</string>
+    <string name="gues_what">gues what</string>
+    <string name="button">Button</string>
 </resources>
