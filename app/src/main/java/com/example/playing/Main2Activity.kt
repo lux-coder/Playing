@@ -82,7 +82,9 @@ class Main2Activity : AppCompatActivity() {
                                     "CodeAndroidLocation",
                                     "GPS Longitude: " + locationGps!!.longitude
                                 )
+
                             }
+
                         }
 
                         override fun onStatusChanged(
@@ -105,8 +107,9 @@ class Main2Activity : AppCompatActivity() {
                     locationGps = localGpsLocation
             }
 
+
             if (hasNetwork) {
-                Log.d("CodeAndroidLocation", "hasGps")
+                Log.d("CodeAndroidLocation", "hasNetwork")
                 locationManager!!.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
                     5000,
@@ -188,6 +191,17 @@ class Main2Activity : AppCompatActivity() {
                 allSuccess = false
         }
         return allSuccess
+    }
+
+    override fun onPause(){
+        Log.d("CodeAndroidLocation", "called: onPause")
+        super.onPause()
+        stopLocationUpdates()
+    }
+
+    private fun stopLocationUpdates(){
+        //locationManager!!.removeUpdates()
+
     }
 
 
